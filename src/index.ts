@@ -8,6 +8,8 @@ import {getAllTasks} from "./controllers/taks/GetAllTasks";
 import {findTaskById} from "./controllers/taks/FindTaskById";
 import {deleteTaskById} from "./controllers/taks/DeleteTaskById";
 import {changeTaskStatus} from "./controllers/taks/ChangeTaskStatus";
+import {register} from "./controllers/auth/Register";
+import {login} from "./controllers/auth/Login";
 
 config();
 
@@ -22,6 +24,9 @@ app.get('/task/:id', findTaskById);
 app.post('/create-task', createTask);
 app.delete('/task/:id', deleteTaskById);
 app.patch('/task/:id', changeTaskStatus);
+
+app.post('/register', register);
+app.post('/login', login);
 
 app.listen(process.env.PORT, async () => {
     await AppDataSource.initialize()
