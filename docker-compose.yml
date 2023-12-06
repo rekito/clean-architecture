@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: tasks-postgres-container
+    environment:
+      POSTGRES_DB: tasks
+      POSTGRES_USER: christopher
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
