@@ -1,5 +1,5 @@
 import {DataSource} from "typeorm";
-import {Task} from "../models/Task";
+import {Task} from "../domain/task/Task";
 import {User} from "../models/User";
 
 export const AppDataSource = new DataSource({

@@ -1,6 +1,6 @@
 
 import { Request, Response } from 'express';
-import {Task} from '../../models/Task';
+import {Task} from '../../domain/task/Task';
 import {AppDataSource} from "../../db/connection";
 
 export async function changeTaskStatus(req: Request, res: Response) {

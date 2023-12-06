@@ -4,12 +4,13 @@ import { config } from 'dotenv';
 import cors from 'cors';
 import {AppDataSource} from "./db/connection";
 import {createTask} from "./controllers/taks/CreateTask";
-import {getAllTasks} from "./controllers/taks/GetAllTasks";
-import {findTaskById} from "./controllers/taks/FindTaskById";
+import {findTaskById} from "./infraestructure/task/controllers/FindTaskById";
 import {deleteTaskById} from "./controllers/taks/DeleteTaskById";
 import {changeTaskStatus} from "./controllers/taks/ChangeTaskStatus";
 import {register} from "./controllers/auth/Register";
 import {login} from "./controllers/auth/Login";
+
+import {getAllTasks} from "./infraestructure/task/controllers/GetAllTasks";
 
 config();
 

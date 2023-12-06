@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import {Task} from '../../models/Task';
+import {Task} from '../../domain/task/Task';
 import { v4 as uui } from 'uuid';
 import {AppDataSource} from "../../db/connection";
 
