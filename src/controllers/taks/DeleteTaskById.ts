@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
-import {AppDataSource} from "../../db/connection";
-import {Task} from "../../models/Task";
+import {AppDataSource} from "../../infraestructure/connection";
+import {Task} from "../../domain/task/Task";
 
 export async function deleteTaskById(req: Request, res: Response) {
     try {

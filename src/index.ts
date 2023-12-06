@@ -2,14 +2,13 @@ import 'reflect-metadata';
 import express from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
-import {AppDataSource} from "./db/connection";
-import {createTask} from "./controllers/taks/CreateTask";
-import {getAllTasks} from "./controllers/taks/GetAllTasks";
-import {findTaskById} from "./controllers/taks/FindTaskById";
-import {deleteTaskById} from "./controllers/taks/DeleteTaskById";
-import {changeTaskStatus} from "./controllers/taks/ChangeTaskStatus";
-import {register} from "./controllers/auth/Register";
-import {login} from "./controllers/auth/Login";
+import {registerUser} from "./infraestructure/controllers/auth/RegisterUser";
+import {loginUser} from "./infraestructure/controllers/auth/LoginUser";
+import {changeTaskStatus} from "./infraestructure/controllers/task/ChangeTaskStatus";
+import {getAllTasks} from "./infraestructure/controllers/task/GetAllTasks";
+import {findTaskById} from "./infraestructure/controllers/task/FindTaskById";
+import {createTask} from "./infraestructure/controllers/task/CreateTask";
+import {deleteTaskById} from "./infraestructure/controllers/task/DeleteTaskById";
 
 config();
 
@@ -25,10 +24,9 @@ app.post('/create-task', createTask);
 app.delete('/task/:id', deleteTaskById);
 app.patch('/task/:id', changeTaskStatus);
 
-app.post('/register', register);
-app.post('/login', login);
+app.post('/register', registerUser);
+app.post('/login', loginUser);
 
 app.listen(process.env.PORT, async () => {
-    await AppDataSource.initialize()
     console.log(`APP RUNNING IN PORT ${process.env.PORT}`);
 })
