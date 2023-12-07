@@ -1,7 +1,7 @@
-import {CreateUser} from "../../user/application/CreateUser";
-import {UserEmailAlreadyTaken} from "../../user/application/UserEmailAlreadyTaken";
-import {User} from "../../user/domain/User";
-import {EmailAlreadyInUseException} from "../../user/domain/exception/EmailAlreadyInUseException";
+import {CreateUser} from "./CreateUser";
+import {UserEmailAlreadyTaken} from "./UserEmailAlreadyTaken";
+import {User} from "../domain/User";
+import {EmailAlreadyInUseException} from "../domain/exception/EmailAlreadyInUseException";
 
 export class Register {
     constructor(

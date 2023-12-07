@@ -1,7 +1,6 @@
-/*import {Connection} from "../../domain/Connection";
+import {Connection} from "../../shared/domain/Connection";
 import {DataSource, EntityTarget} from "typeorm";
-import {Task} from "../../../task/domain/Task";
-import {User} from "../../../user/domain/User";
+import {User} from "../domain/User";
 import {injectable} from "inversify";
 
 @injectable()
@@ -15,14 +14,14 @@ export class DatabaseConnection implements Connection {
     async connect(): Promise<void> {
         this.appDataSource = new DataSource({
             type: "postgres",
-            host: "localhost",
+            host: "postgres-db",
             port: 5432,
             username: "christopher",
             password: "12345",
             database: "tasks",
             synchronize: true,
             subscribers: [],
-            entities: [Task, User]
+            entities: [User]
         });
 
         await this.appDataSource.initialize();
@@ -36,4 +35,3 @@ export class DatabaseConnection implements Connection {
         return this.appDataSource.getRepository(entity);
     }
 }
-*/

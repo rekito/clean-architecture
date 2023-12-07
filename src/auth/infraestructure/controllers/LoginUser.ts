@@ -1,9 +1,9 @@
 import {Request, Response} from "express";
-import {FindUserByEmail} from "../../../user/application/FindUserByEmail";
+import {FindUserByEmail} from "../../application/FindUserByEmail";
 import {Login} from "../../application/Login";
 import {Jwt} from "../../../shared/domain/Jwt";
-import {WrongCredentialsException} from "../../../user/domain/exception/WrongCredentialsException";
-import {container} from "../../../container";
+import {WrongCredentialsException} from "../../domain/exception/WrongCredentialsException";
+import {container} from "../../container";
 
 const findUserByEmailUseCase = container.get<FindUserByEmail>('FindUserByEmail');
 const loginUseCase = container.get<Login>('Login');

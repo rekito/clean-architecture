@@ -1,8 +1,8 @@
 import {Request, Response} from "express";
-import {RandomId} from "../../../shared/domain/RandomId";
+import {RandomId} from "shared/domain/RandomId";
 import {Task} from "../../domain/Task";
 import {CreateTask} from "../../application/CreateTask";
-import {container} from "../../../container";
+import {container} from "../../container";
 
 const randomId = container.get<RandomId>('RandomId');
 const createTaskUseCase = container.get<CreateTask>('CreateTask');

@@ -1,6 +1,6 @@
-import {VerifyUserPassword} from "../../user/application/VerifyUserPassword";
-import {FindUserByEmail} from "../../user/application/FindUserByEmail";
-import {WrongCredentialsException} from "../../user/domain/exception/WrongCredentialsException";
+import {VerifyUserPassword} from "./VerifyUserPassword";
+import {FindUserByEmail} from "./FindUserByEmail";
+import {WrongCredentialsException} from "../domain/exception/WrongCredentialsException";
 import {inject, injectable} from "inversify";
 
 @injectable()

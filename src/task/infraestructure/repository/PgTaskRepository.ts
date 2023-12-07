@@ -1,6 +1,6 @@
 import {TaskRepository} from "../../domain/TaskRepository";
 import {Task} from "../../domain/Task";
-import {DatabaseConnection} from "../../../shared/infraestructure/persistence/DatabaseConnection";
+import {DatabaseConnection} from "../DatabaseConnection";
 import {inject, injectable} from "inversify";
 
 @injectable()

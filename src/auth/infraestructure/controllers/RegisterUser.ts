@@ -1,14 +1,14 @@
 import {Request, Response} from "express";
 import {BcryptEncryption} from "../../../shared/domain/BcryptEncryption";
-import {User} from "../../../user/domain/User";
+import {User} from "../../domain/User";
 import {RandomId} from "../../../shared/domain/RandomId";
-import {EmailAlreadyInUseException} from "../../../user/domain/exception/EmailAlreadyInUseException";
-import {CreateUser} from "../../../user/application/CreateUser";
-import {PgUserRepository} from "../../../user/infraestructure/PgUserRepository";
-import {DatabaseConnection} from "../../../shared/infraestructure/persistence/DatabaseConnection";
-import {UserEmailAlreadyTaken} from "../../../user/application/UserEmailAlreadyTaken";
+import {EmailAlreadyInUseException} from "../../domain/exception/EmailAlreadyInUseException";
+import {CreateUser} from "../../application/CreateUser";
+import {PgUserRepository} from "../PgUserRepository";
+import {UserEmailAlreadyTaken} from "../../application/UserEmailAlreadyTaken";
 import {Register} from "../../application/Register";
 import {Jwt} from "../../../shared/domain/Jwt";
+import {DatabaseConnection} from "../DatabaseConnection";
 
 export async function registerUser(req: Request, res: Response) {
     /** DEPENDENCIES */

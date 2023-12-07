@@ -1,7 +1,7 @@
-import {DatabaseConnection} from "../../shared/infraestructure/persistence/DatabaseConnection";
 import {UserRepository} from "../domain/UserRepository";
 import {User} from "../domain/User";
 import {inject, injectable} from "inversify";
+import {DatabaseConnection} from "./DatabaseConnection";
 
 @injectable()
 export class PgUserRepository implements UserRepository {

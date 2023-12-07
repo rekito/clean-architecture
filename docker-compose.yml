@@ -4,6 +4,8 @@ services:
   postgres-db:
     image: postgres:latest
     container_name: tasks-postgres-container
+    networks:
+      - clean-architecture
     environment:
       POSTGRES_DB: tasks
       POSTGRES_USER: christopher
@@ -12,3 +14,40 @@ services:
       - "5432:5432"
     expose:
       - "5432"
+
+  shared:
+    depends_on:
+      postgres-db:
+        condition: service_started
+    build:
+      context: ./src/shared
+    networks:
+      - clean-architecture
+
+  auth:
+    depends_on:
+      postgres-db:
+        condition: service_started
+      shared:
+        condition: service_started
+    build:
+      context: ./src/auth
+    networks:
+      - clean-architecture
+    ports:
+      - "9001:9001"
+
+  tasks:
+    depends_on:
+      shared:
+        condition: service_started
+    build:
+      context: ./src/task
+    networks:
+      - clean-architecture
+    ports:
+      - "9000:9000"
+
+
+networks:
+  clean-architecture:

@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import {FindTaskById} from "../../application/FindTaskById";
 import {TaskNotFoundException} from "../../domain/TaskNotFoundException";
 import {ChangeTaskStatus} from "../../application/ChangeTaskStatus";
-import {container} from "../../../container";
+import {container} from "../../container";
 
 const findTaskByIdUseCase = container.get<FindTaskById>('FindTaskById');
 const changeTaskStatusUseCase = container.get<ChangeTaskStatus>('ChangeTaskStatus');

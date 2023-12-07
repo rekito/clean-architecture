@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {DeleteTaskById} from "../../application/DeleteTaskById";
 import {TaskNotFoundException} from "../../domain/TaskNotFoundException";
-import {container} from "../../../container";
+import {container} from "../../container";
 
 const deleteTaskByIdUseCase = container.get<DeleteTaskById>('DeleteTaskById');
 
