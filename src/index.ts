@@ -2,13 +2,13 @@ import 'reflect-metadata';
 import express from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
-import {registerUser} from "./infraestructure/controllers/auth/RegisterUser";
-import {loginUser} from "./infraestructure/controllers/auth/LoginUser";
-import {changeTaskStatus} from "./infraestructure/controllers/task/ChangeTaskStatus";
-import {getAllTasks} from "./infraestructure/controllers/task/GetAllTasks";
-import {findTaskById} from "./infraestructure/controllers/task/FindTaskById";
-import {createTask} from "./infraestructure/controllers/task/CreateTask";
-import {deleteTaskById} from "./infraestructure/controllers/task/DeleteTaskById";
+import {registerUser} from "./auth/infraestructure/controllers/RegisterUser";
+import {loginUser} from "./auth/infraestructure/controllers/LoginUser";
+import {changeTaskStatus} from "./task/infraestructure/controllers/ChangeTaskStatus";
+import {getAllTasks} from "./task/infraestructure/controllers/GetAllTasks";
+import {findTaskById} from "./task/infraestructure/controllers/FindTaskById";
+import {createTask} from "./task/infraestructure/controllers/CreateTask";
+import {deleteTaskById} from "./task/infraestructure/controllers/DeleteTaskById";
 
 config();
 
